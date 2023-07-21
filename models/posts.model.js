@@ -4,7 +4,7 @@ function getAllPosts() {
     const queryString = `
         SELECT *
         FROM posts
-        ORDER BY post_id DESC;
+        ORDER BY post_updated DESC;
     `
 
     return database
