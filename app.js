@@ -3,30 +3,35 @@ const app = express();
 
 app.use(express.json());
 
-// const {
-//     getUsers
-// } = require("./controllers/users.controller")
+const {
+    getUsers,
+    getUserById,
+    addUser,
+    updateUserById,
+    deleteUserById
+} = require("./controllers/users.controller");
 
-// app.get("/api/users", getUsers);
+const {
+    getPosts
+} = require("./controllers/posts.controller");
 
-app.get("/api/users", (request, response) => {
-    response.status(200).send({ msg: "These are all the users." })
-});
+const {
+    handle404Errors,
+    handleCustomErrors,
+    handle500Errors
+} = require("./controllers/errors.controller");
 
-app.get("/api/users/:user_id", (request, response) => {
-    response.status(200).send({ msg: "This is a single user." })
-})
+app.get("/api/users", getUsers);
+app.get("/api/users/:user_id", getUserById);
+app.post("/api/users", addUser);
+app.patch("/api/users/:user_id", updateUserById);
+app.delete("/api/users/:user_id", deleteUserById);
 
-app.get("/api/users?hungry=true", (request, response) => {
-    const { hungry } = request.query;
-    console.log(hungry);
-    console.log(request.query)
-    response.status(200).send({ msg: hungry })
-})
+app.get("/api/posts", getPosts);
 
-app.post("/api/users", (request, response) => {
-    console.log(request.body);
-    response.status(201).send({ msg: request.body })
-})
+app.all("*", handle404Errors);
+
+app.use(handleCustomErrors);
+app.use(handle500Errors);
 
 module.exports = app;

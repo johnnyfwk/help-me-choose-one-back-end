@@ -1,0 +1,29 @@
+You are now connected to database "help_me_choose_one" as user "johnny".
+ user_id | username  | password  |                    avatar_url                    |        join_date         
+---------+-----------+-----------+--------------------------------------------------+--------------------------
+      10 | ian       | internick | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-07-21T09:59:42.783Z
+       9 | helen     | internick | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-07-21T08:59:42.783Z
+       8 | gary      | internick | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-07-21T07:59:42.783Z
+       7 | frank     | internick | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-07-21T06:59:42.783Z
+       6 | ellie     | internick | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-07-21T05:59:42.783Z
+       5 | david     | internick | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-07-21T04:59:42.783Z
+       4 | catherine | internick | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-07-21T03:59:42.783Z
+       3 | billy     | internick | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-07-21T02:59:42.783Z
+       2 | abbie     | internick | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-07-21T01:59:42.783Z
+       1 | johnny    | internick | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-07-21T00:59:42.783Z
+(10 rows)
+
+ post_id |        post_date         |       post_updated       |                          title                          |                                                 description                                                 |                                      options                                      | user_id 
+---------+--------------------------+--------------------------+---------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------
+      10 | 2023-07-21T10:59:42.783Z | 2023-07-21T10:59:42.783Z | What should I have for my dinner tonight?               | Can't choose between Mcdonald's, Burger King, and KFC.                                                      | {'McDonalds',"'Burger King'",'KFC'}                                               |      10
+       9 | 2023-07-21T09:59:42.783Z | 2023-07-21T09:59:42.783Z | Which bank should I open a bank account with?           | I need a bank account but don't know which bank to open one with? Can I get some suggestions please? Thanks | {'Monzo','Starling','Halifax','Barclays'}                                         |       9
+       8 | 2023-07-21T08:59:42.783Z | 2023-07-21T08:59:42.783Z | What car should I buy?                                  | I am super rich and feel like splashing some cash on a car tomorrow. Which one should I buy?                | {"'Ford Fiesta'","'Tesla Model 3'","'BMW 3 Series'"}                              |       8
+       7 | 2023-07-21T07:59:42.783Z | 2023-07-21T07:59:42.783Z | What headphones should I buy?                           | I just broke my headphones and need a new pair. Which one should I buy?                                     | {"'Bose QuietComfort 45'","'Sony WH-1000XM4'","'Sennheiser Momentum 4 Wireless'"} |       7
+       6 | 2023-07-21T06:59:42.783Z | 2023-07-21T06:59:42.783Z | How many kids should I have?                            | My husband and I want to have children but don't know how many we should we have. What do you guys think?   | {'1','2','3','4','5','10'}                                                        |       6
+       5 | 2023-07-21T05:59:42.783Z | 2023-07-21T05:59:42.783Z | Where should I go on holiday this summer?               | I have 2 weeks off work this summer and can't decide where to go. Where should I go?                        | {'Scotland','France','Spain','Italy'}                                             |       5
+       4 | 2023-07-21T04:59:42.783Z | 2023-07-21T04:59:42.783Z | Which Tesco meal deal sandwich should I have for lunch? | I'm going to take an extra long lunch break today and enjoy a sandwich from Tesco. Which one is the best?   | {'BLT',"'Tuna & Cucumber'","'Chicken Salad'","'prawn mayonnaise'"}                |       4
+       3 | 2023-07-21T03:59:42.783Z | 2023-07-21T03:59:42.783Z | Which mobile phone should I buy?                        | I can't choose between the Google Pixel 10 Pro or Apple iPhone 30.                                          | {"'Gooogle Pixel 10 Pro'","'Apple iPhone 30'"}                                    |       3
+       2 | 2023-07-21T02:59:42.783Z | 2023-07-21T02:59:42.783Z | What colour should I paint my bedroom?                  | Going to repaint my bedroom this weekend. What colour should I paint it?                                    | {'beige','black','pink','orange'}                                                 |       2
+       1 | 2023-07-21T01:59:42.783Z | 2023-07-21T01:59:42.783Z | Which crisp flavour should I have right now?            | I have the choice between salt and vinegar, cheese and onion, ready salted, or prawn cocktail.              | {"'salt and vinegar'","'cheese and onion'","'ready salted'","'prawn cocktail'"}   |       1
+(10 rows)
+

@@ -2,7 +2,8 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "pg": "^8.11.1"
+    "pg": "^8.11.1",
+    "pg-format": "^1.0.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
@@ -15,7 +16,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon listen.js",
     "dev-create-database": "psql -f ./database/create/create-database.sql",
-    "dev-drop-database": "psql -f ./database/drop/drop-database.sql"
+    "dev-drop-database": "psql -f ./database/drop/drop-database.sql",
+    "dev-drop-table-users": "node ./database/drop/tables/drop-table-users.js",
+    "dev-create-table-users": "node ./database/create/tables/create-table-users.js",
+    "dev-seed-table-users": "node ./database/seed/seed-table-users.js",
+    "dev-drop-table-posts": "node ./database/drop/tables/drop-table-posts.js",
+    "dev-create-table-posts": "node ./database/create/tables/create-table-posts.js",
+    "dev-seed-table-posts": "node ./database/seed/seed-table-posts.js",
+    "dev-check-all-tables": "psql -f ./database/check/check-all-tables.sql > ./database/check/all-tables.txt"
   },
   "repository": {
     "type": "git",
