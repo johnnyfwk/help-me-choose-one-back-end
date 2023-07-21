@@ -41,7 +41,6 @@ function getSinglePostById(postId) {
     return database
         .query(queryString, queryValue)
         .then((response) => {
-            console.log(response)
             if (response.rowCount === 0) {
                 return Promise.reject({status: 404, msg: "Post does not exist."});
             }
@@ -49,7 +48,148 @@ function getSinglePostById(postId) {
         })
 }
 
+function getAllPostsByUserId(userId) {
+    if (isNaN(userId)) {
+        return Promise.reject({status: 400, msg: "Please enter a valid user ID."});
+    }
+
+    const queryString = `
+        SELECT
+            posts.post_id,
+            posts.post_date,
+            posts.post_updated,
+            posts.title,
+            posts.description,
+            posts.options_and_votes,
+            posts.post_owner_id,
+            users.username,
+            users.avatar_url
+        FROM posts
+        JOIN users
+        ON posts.post_owner_id = users.user_id
+        WHERE posts.post_owner_id = $1
+        ORDER BY posts.post_updated DESC;
+    `
+    const queryValue = [userId];
+
+    return database
+        .query(queryString, queryValue)
+        .then((response) => {
+            if (response.rowCount === 0) {
+                return Promise.reject({status: 404, msg: "User does not exist or they have not created any posts."});
+            }
+            return response.rows;
+        })
+}
+
+function createSinglePost(post) {
+    const queryString = `
+        INSERT INTO posts
+            (post_date, post_updated, title, description, options_and_votes, post_owner_id)
+        VALUES
+            ($1, $2, $3, $4, $5, $6)
+        RETURNING *;
+    `;
+
+    const queryValues = [
+        post.post_date,
+        post.post_updated,
+        post.title,
+        post.description,
+        JSON.stringify(post.options_and_votes),  // Convert to JSON string. Required when inserting nested arrays into tables or updating nested arrays.
+        post.post_owner_id
+    ];
+
+    return database
+        .query(queryString, queryValues)
+        .then((response) => {
+            return response.rows[0];
+        })
+}
+
+function updateSinglePostById(postId, postInfo) {
+    if (isNaN(postId)) {
+        return Promise.reject({status: 400, msg: "Please enter a valid post ID."});
+    }
+
+    const queryString = `
+        UPDATE posts
+        SET
+            post_updated = $1,
+            title = $2,
+            description = $3,
+            options_and_votes = $4
+        WHERE post_id = $5
+        RETURNING *;
+    `
+    const queryValues = [
+        postInfo.post_updated,
+        postInfo.title,
+        postInfo.description,
+        JSON.stringify(postInfo.options_and_votes), // Convert to JSON string. Required when inserting nested arrays into tables or updating nested arrays.
+        postId
+    ];
+
+    return database
+        .query(queryString, queryValues)
+        .then((response) => {
+            if (response.rowCount === 0) {
+                return Promise.reject({status: 404, msg: "Post does not exist."});
+            }
+            return response.rows[0];
+        })
+}
+
+function deleteSinglePostById(postId) {
+    if (isNaN(postId)) {
+        return Promise.reject({status: 400, msg: "Please enter a valid post ID."});
+    }
+
+    const queryString = `
+        DELETE FROM posts
+        WHERE post_id = $1
+        RETURNING *;
+    `
+    const queryValue = [postId];
+
+    return database
+        .query(queryString, queryValue)
+        .then((response) => {
+            if (response.rowCount === 0) {
+                return Promise.reject({status: 404, msg: "Post does not exist."});
+            }
+            return response.rows[0];
+        })
+}
+
+function deleteAllPostsByUserId(userId) {
+    if (isNaN(userId)) {
+        return Promise.reject({status: 400, msg: "Please enter a valid user ID."});
+    }
+
+    const queryString = `
+        DELETE FROM posts
+        WHERE post_owner_id = $1
+        RETURNING *;
+    `
+    const queryValue = [userId];
+
+    return database
+        .query(queryString, queryValue)
+        .then((response) => {
+            if (response.rowCount === 0) {
+                return Promise.reject({status: 404, msg: "User does not exist."});
+            }
+            return response.rows[0];
+        })
+}
+
 module.exports = {
     getAllPosts,
-    getSinglePostById
+    getSinglePostById,
+    getAllPostsByUserId,
+    createSinglePost,
+    updateSinglePostById,
+    deleteSinglePostById,
+    deleteAllPostsByUserId
 }

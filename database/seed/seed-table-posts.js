@@ -8,7 +8,7 @@ function seedTablePosts(posts) {
         post.postUpdated,
         post.title,
         post.description,
-        JSON.stringify(post.optionsAndVotes), // Convert to JSON string
+        JSON.stringify(post.optionsAndVotes), // Convert to JSON string. Required when inserting nested arrays into tables or updating nested arrays.
         post.postOwnerId
     ]);
 
