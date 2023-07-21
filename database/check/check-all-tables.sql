@@ -6,4 +6,4 @@ ORDER BY user_id DESC;
 
 SELECT *
 FROM posts
-ORDER BY user_id DESC;
+ORDER BY post_id DESC;

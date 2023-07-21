@@ -9,8 +9,8 @@ function createTablePosts() {
             title VARCHAR(100),
             description VARCHAR(300),
             options TEXT[],
-            user_id INT,
-            FOREIGN KEY (user_id) REFERENCES users(user_id)
+            post_owner_id INT,
+            FOREIGN KEY (post_owner_id) REFERENCES users(user_id)
         );
     `
     return database
