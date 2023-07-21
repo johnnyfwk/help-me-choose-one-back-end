@@ -39,13 +39,13 @@ function getSingleUserById(userId) {
 function addSingleUser(user) {
     const queryString = `
         INSERT INTO users
-            (username, password, avatar_url, join_date)
+            (username, password, avatar, join_date)
         VALUES
             ($1, $2, $3, $4)
         RETURNING *;
     `
 
-    const queryValues = [user.username, user.password, user.avatar_url, user.join_date];
+    const queryValues = [user.username, user.password, user.avatar, user.join_date];
 
     return database
         .query(queryString, queryValues)
@@ -63,11 +63,11 @@ function updateSingleUserById(userId, userInfo) {
         UPDATE users
         SET
             password = $1,
-            avatar_url = $2
+            avatar = $2
         WHERE user_id = $3
         RETURNING *;
     `
-    const queryValues = [userInfo.password, userInfo.avatar_url, userId];
+    const queryValues = [userInfo.password, userInfo.avatar, userId];
 
     return database
         .query(queryString, queryValues)
