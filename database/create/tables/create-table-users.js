@@ -2,9 +2,9 @@ const database = require("../../connection");
 
 function createTableUsers() {
     const queryString = `
-        CREATE TABLE users (
+        CREATE TABLE IF NOT EXISTS users (
             user_id SERIAL PRIMARY KEY,
-            username VARCHAR(20),
+            username TEXT,
             password TEXT,
             avatar_url TEXT,
             join_date VARCHAR(50)

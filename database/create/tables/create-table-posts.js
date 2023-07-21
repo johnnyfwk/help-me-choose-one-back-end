@@ -2,13 +2,13 @@ const database = require("../../connection");
 
 function createTablePosts() {
     const queryString = `
-        CREATE TABLE posts (
+        CREATE TABLE IF NOT EXISTS posts (
             post_id SERIAL PRIMARY KEY,
             post_date VARCHAR(50),
             post_updated VARCHAR(50),
-            title VARCHAR(100),
-            description VARCHAR(300),
-            options TEXT[],
+            title TEXT,
+            description TEXT,
+            options_and_votes JSONB,
             post_owner_id INT,
             FOREIGN KEY (post_owner_id) REFERENCES users(user_id)
         );

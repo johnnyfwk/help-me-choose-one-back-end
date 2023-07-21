@@ -12,7 +12,8 @@ const {
 } = require("./controllers/users.controller");
 
 const {
-    getPosts
+    getPosts,
+    getPostById
 } = require("./controllers/posts.controller");
 
 const {
@@ -28,6 +29,7 @@ app.patch("/api/users/:user_id", updateUserById);
 app.delete("/api/users/:user_id", deleteUserById);
 
 app.get("/api/posts", getPosts);
+app.get("/api/posts/:post_id", getPostById);
 
 app.all("*", handle404Errors);
 
