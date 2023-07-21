@@ -4,6 +4,7 @@ const posts = [
         postUpdated: "2023-07-21T01:59:42.783Z",
         title: "Which crisp flavour should I have right now?",
         description: "I have the choice between salt and vinegar, cheese and onion, ready salted, or prawn cocktail.",
+        category: "Food & Drink",
         optionsAndVotes: [
             ["salt and vinegar", "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg", [2, 8]],
             ["cheese and onion", "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg", [6]],
@@ -17,6 +18,7 @@ const posts = [
         postUpdated: "2023-07-21T02:59:42.783Z",
         title: "What colour should I paint my bedroom?",
         description: "Going to repaint my bedroom this weekend. What colour should I paint it?",
+        category: "Home & Garden",
         optionsAndVotes: [
             ["beige", "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg", [1, 3, 4, 7]],
             ["black", "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg", []],
@@ -30,6 +32,7 @@ const posts = [
         postUpdated: "2023-07-21T03:59:42.783Z",
         title: "Which mobile phone should I buy?",
         description: "I can't choose between the Google Pixel 10 Pro or Apple iPhone 30.",
+        category: "Electronics",
         optionsAndVotes: [
             ["Gooogle Pixel 10 Pro", "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg", [1, 2, 5, 9, 10]],
             ["Apple iPhone 30", "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg", [4, 6, 7, 8]]
@@ -39,13 +42,14 @@ const posts = [
     {
         postDate: "2023-07-21T04:59:42.783Z",
         postUpdated: "2023-07-21T04:59:42.783Z",
-        title: "Which Tesco meal deal sandwich should I have for lunch?",
-        description: "I'm going to take an extra long lunch break today and enjoy a sandwich from Tesco. Which one is the best?",
+        title: "Where is the best place to buy a waterproof jacket?",
+        description: "I have £150 to spend on a lightweight and waterproof jacket. Where is the best place to buy one?",
+        category: "Fashion & Accessories",
         optionsAndVotes: [
-            ["BLT", "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg", [5, 6, 7, 8]],
-            ["Tuna & Cucumber", "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg", [3]],
-            ["Chicken Salad", "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg", [1, 9, 10]],
-            ["prawn mayonnaise", "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg", [2]]
+            ["Uniqlo", "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg", [5, 6, 7, 8]],
+            ["Sports Direct", "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg", [3]],
+            ["The North Face", "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg", [1, 9, 10]],
+            ["Mountain Warehouse", "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg", [2]]
         ],
         postOwnerId: 4
     },
@@ -54,6 +58,7 @@ const posts = [
         postUpdated: "2023-07-21T05:59:42.783Z",
         title: "Where should I go on holiday this summer?",
         description: "I have 2 weeks off work this summer and can't decide where to go. Where should I go?",
+        category: "Travel",
         optionsAndVotes: [
             ["Scotland", "", [3]],
             ["France", "", [7, 8]],
@@ -67,6 +72,7 @@ const posts = [
         postUpdated: "2023-07-21T06:59:42.783Z",
         title: "How many kids should I have?",
         description: "My husband and I want to have children but don't know how many we should we have. What do you guys think?",
+        category: "Love & Relationship",
         optionsAndVotes: [
             ["1", "", [2, 3, 7, 10]],
             ["2", "", [1, 4, 9]],
@@ -80,6 +86,7 @@ const posts = [
         postUpdated: "2023-07-21T07:59:42.783Z",
         title: "What headphones should I buy?",
         description: "I just broke my headphones and need a new pair. Which one should I buy?",
+        category: "Electronics",
         optionsAndVotes: [
             ["Bose QuietComfort 45", "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg", [1, 2, 3, 4, 8, 10]],
             ["Sony WH-1000XM4", "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg", [9]],
@@ -92,6 +99,7 @@ const posts = [
         postUpdated: "2023-07-21T08:59:42.783Z",
         title: "What car should I buy?",
         description: "I am super rich and feel like splashing some cash on a car tomorrow. Which one should I buy?",
+        category: "Vehicles",
         optionsAndVotes: [
             ["Ford Fiesta", "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg", []],
             ["Tesla Model 3", "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg", [1, 2, 3, 4, 5, 6, 9, 10]],
@@ -104,6 +112,7 @@ const posts = [
         postUpdated: "2023-07-21T09:59:42.783Z",
         title: "Which bank should I open a bank account with?",
         description: "I need a bank account but don't know which bank to open one with? Can I get some suggestions please? Thanks",
+        category: "Financial Services",
         optionsAndVotes: [
             ["Monzo", "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg", [1, 2, 3, 4, 6]],
             ["Starling", "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg", [5, 7, 10]],
@@ -117,6 +126,7 @@ const posts = [
         postUpdated: "2023-07-21T10:59:42.783Z",
         title: "What should I have for my dinner tonight?",
         description: "Can't choose between Mcdonald's, Burger King, and KFC.",
+        category: "Food & Drink",
         optionsAndVotes: [
             ["McDonalds", "", [2, 3, 4, 5, 6]],
             ["Burger King", "", [1, 8]],

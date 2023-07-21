@@ -26,6 +26,7 @@ function getSinglePostById(postId) {
             posts.post_updated,
             posts.title,
             posts.description,
+            posts.category,
             posts.options_and_votes,
             posts.post_owner_id,
             users.username,
@@ -60,6 +61,7 @@ function getAllPostsByUserId(userId) {
             posts.post_updated,
             posts.title,
             posts.description,
+            posts.category,
             posts.options_and_votes,
             posts.post_owner_id,
             users.username,
@@ -85,9 +87,9 @@ function getAllPostsByUserId(userId) {
 function createSinglePost(post) {
     const queryString = `
         INSERT INTO posts
-            (post_date, post_updated, title, description, options_and_votes, post_owner_id)
+            (post_date, post_updated, title, description, category, options_and_votes, post_owner_id)
         VALUES
-            ($1, $2, $3, $4, $5, $6)
+            ($1, $2, $3, $4, $5, $6, $7)
         RETURNING *;
     `;
 
@@ -96,6 +98,7 @@ function createSinglePost(post) {
         post.post_updated,
         post.title,
         post.description,
+        post.category,
         JSON.stringify(post.options_and_votes),  // Convert to JSON string. Required when inserting nested arrays into tables or updating nested arrays.
         post.post_owner_id
     ];
@@ -118,14 +121,16 @@ function updateSinglePostById(postId, postInfo) {
             post_updated = $1,
             title = $2,
             description = $3,
-            options_and_votes = $4
-        WHERE post_id = $5
+            category = $4,
+            options_and_votes = $5
+        WHERE post_id = $6
         RETURNING *;
     `
     const queryValues = [
         postInfo.post_updated,
         postInfo.title,
         postInfo.description,
+        postInfo.category,
         JSON.stringify(postInfo.options_and_votes), // Convert to JSON string. Required when inserting nested arrays into tables or updating nested arrays.
         postId
     ];

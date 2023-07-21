@@ -8,6 +8,7 @@ function seedTablePosts(posts) {
         post.postUpdated,
         post.title,
         post.description,
+        post.category,
         JSON.stringify(post.optionsAndVotes), // Convert to JSON string. Required when inserting nested arrays into tables or updating nested arrays.
         post.postOwnerId
     ]);
@@ -15,7 +16,7 @@ function seedTablePosts(posts) {
     const queryStringAndValues = format(
         `
             INSERT INTO posts
-                (post_date, post_updated, title, description, options_and_votes, post_owner_id)
+                (post_date, post_updated, title, description, category, options_and_votes, post_owner_id)
             VALUES
                 %L
             RETURNING *;
