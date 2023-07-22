@@ -146,7 +146,7 @@ function createSingleComment(comment) {
         INSERT INTO comments
             (comment_date, comment_updated, comment, comment_likes_from_user_ids, comment_post_id, comment_owner_id)
         VALUES
-            ($1, $2, $3, $4, $5)
+            ($1, $2, $3, $4, $5, $6)
         RETURNING *;
     `
     const queryValues = [
