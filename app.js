@@ -22,6 +22,18 @@ const {
 } = require("./controllers/posts.controller");
 
 const {
+    getComments,
+    getCommentById,
+    getCommentsByPostId,
+    getCommentsByUserId,
+    createComment,
+    updateCommentById,
+    deleteCommentById,
+    deleteCommentsByPostId,
+    deleteCommentsByUserId
+} = require("./controllers/comments.controller");
+
+const {
     handle404Errors,
     handleCustomErrors,
     handle500Errors
@@ -40,6 +52,16 @@ app.post("/api/posts", createPost);
 app.patch("/api/posts/:post_id", updatePostById);
 app.delete("/api/posts/:post_id", deletePostById);
 app.delete("/api/users/:user_id/posts", deletePostsByUserId);
+
+app.get("/api/comments", getComments);
+app.get("/api/comments/:comment_id", getCommentById);
+app.get("/api/posts/:post_id/comments", getCommentsByPostId);
+app.get("/api/users/:user_id/comments", getCommentsByUserId);
+app.post("/api/comments", createComment);
+app.patch("/api/comments/:comment_id", updateCommentById);
+app.delete("/api/comments/:comment_id", deleteCommentById);
+app.delete("/api/posts/:post_id/comments", deleteCommentsByPostId);
+app.delete("/api/users/:user_id/comments", deleteCommentsByUserId);
 
 app.all("*", handle404Errors);
 
