@@ -2,8 +2,21 @@ const database = require("../database/connection");
 
 function getAllPosts() {
     const queryString = `
-        SELECT *
+        SELECT
+            posts.post_id,
+            posts.post_date,
+            posts.post_updated,
+            posts.title,
+            posts.description,
+            posts.category,
+            posts.options_and_votes,
+            posts.post_owner_id,
+            users.user_id,
+            users.username,
+            users.avatar
         FROM posts
+        JOIN users
+            ON posts.post_owner_id = users.user_id
         ORDER BY post_updated DESC;
     `
 
@@ -29,11 +42,12 @@ function getSinglePostById(postId) {
             posts.category,
             posts.options_and_votes,
             posts.post_owner_id,
+            users.user_id,
             users.username,
-            users.avatar_url
+            users.avatar
         FROM posts
         JOIN users
-        ON posts.post_owner_id = users.user_id
+            ON posts.post_owner_id = users.user_id
         WHERE post_id = $1;
     `
 
@@ -65,7 +79,7 @@ function getAllPostsByUserId(userId) {
             posts.options_and_votes,
             posts.post_owner_id,
             users.username,
-            users.avatar_url
+            users.avatar
         FROM posts
         JOIN users
         ON posts.post_owner_id = users.user_id

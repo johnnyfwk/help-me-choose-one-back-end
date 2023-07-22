@@ -11,7 +11,7 @@ const {
 function getPosts(request, response, next) {
     getAllPosts()
         .then((posts) => {
-            response.status(200).send({ posts });
+            response.status(200).send({posts});
         })
         .catch((error) => {
             next(error);
@@ -21,7 +21,7 @@ function getPosts(request, response, next) {
 function getPostById(request, response, next) {
     getSinglePostById(request.params.post_id)
         .then((post) => {
-            response.status(200).send({ post });
+            response.status(200).send({post});
         })
         .catch((error) => {
             next(error);
