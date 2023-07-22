@@ -1,16 +1,16 @@
 You are now connected to database "help_me_choose_one" as user "johnny".
- user_id | username  | password  |       avatar        |        join_date         
----------+-----------+-----------+---------------------+--------------------------
-      10 | ian       | internick | default-avatar.webp | 2023-07-21T09:59:42.783Z
-       9 | helen     | internick | default-avatar.webp | 2023-07-21T08:59:42.783Z
-       8 | gary      | internick | default-avatar.webp | 2023-07-21T07:59:42.783Z
-       7 | frank     | internick | default-avatar.webp | 2023-07-21T06:59:42.783Z
-       6 | ellie     | internick | default-avatar.webp | 2023-07-21T05:59:42.783Z
-       5 | david     | internick | default-avatar.webp | 2023-07-21T04:59:42.783Z
-       4 | catherine | internick | default-avatar.webp | 2023-07-21T03:59:42.783Z
-       3 | billy     | internick | default-avatar.webp | 2023-07-21T02:59:42.783Z
-       2 | abbie     | internick | default-avatar.webp | 2023-07-21T01:59:42.783Z
-       1 | johnny    | internick | default-avatar.webp | 2023-07-21T00:59:42.783Z
+ user_id | username  | password |       avatar        |        join_date         
+---------+-----------+----------+---------------------+--------------------------
+      10 | ian       | password | default-avatar.webp | 2023-07-21T09:59:42.783Z
+       9 | HeleN     | password | default-avatar.webp | 2023-07-21T08:59:42.783Z
+       8 | gary      | password | default-avatar.webp | 2023-07-21T07:59:42.783Z
+       7 | FRANK     | password | default-avatar.webp | 2023-07-21T06:59:42.783Z
+       6 | ellie     | password | default-avatar.webp | 2023-07-21T05:59:42.783Z
+       5 | DaViD     | password | default-avatar.webp | 2023-07-21T04:59:42.783Z
+       4 | CATHERINE | password | default-avatar.webp | 2023-07-21T03:59:42.783Z
+       3 | billy     | password | default-avatar.webp | 2023-07-21T02:59:42.783Z
+       2 | Abbie     | password | default-avatar.webp | 2023-07-21T01:59:42.783Z
+       1 | Johnny    | password | default-avatar.webp | 2023-07-21T00:59:42.783Z
 (10 rows)
 
  post_id |        post_date         |       post_updated       |                        title                        |                                                 description                                                 |       category        |                                                                                                                                                                                                                                                                                               options_and_votes                                                                                                                                                                                                                                                                                                | post_owner_id 
