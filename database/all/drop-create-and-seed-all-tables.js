@@ -60,6 +60,7 @@ function createTableComments() {
             comment_date VARCHAR(50),
             comment_updated VARCHAR(50),
             comment VARCHAR(300),
+            comment_likes_from_user_ids JSONB,
             comment_post_id INT,
             comment_owner_id INT,
             FOREIGN KEY (comment_post_id) REFERENCES posts(post_id),
@@ -118,13 +119,13 @@ function seedTablePosts(posts) {
 
 function seedTableComments(comments) {
     const queryValues = comments.map((comment) => {
-        const commentArray = [comment.commentDate, comment.commentUpdated, comment.comment, comment.commentPostId, comment.commentOwnerId];
+        const commentArray = [comment.commentDate, comment.commentUpdated, comment.comment, JSON.stringify(comment.commentLikesFromUserIds), comment.commentPostId, comment.commentOwnerId];
         return commentArray;
     })
 
     const queryStringAndValues = format(`
         INSERT INTO comments
-            (comment_date, comment_updated, comment, comment_post_id, comment_owner_id)
+            (comment_date, comment_updated, comment, comment_likes_from_user_ids, comment_post_id, comment_owner_id)
         VALUES
             %L
         RETURNING *;

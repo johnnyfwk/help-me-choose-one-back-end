@@ -9,6 +9,7 @@ function getAllComments() {
             comments.comment_post_id,
             posts.post_id,
             comments.comment,
+            comments.comment_likes_from_user_ids,
             comments.comment_owner_id,
             users.user_id,
             users.username,
@@ -40,6 +41,7 @@ function getSingleCommentById(commentId) {
             comments.comment_post_id,
             posts.post_id,
             comments.comment,
+            comments.comment_likes_from_user_ids,
             comments.comment_owner_id,
             users.user_id,
             users.username,
@@ -76,6 +78,7 @@ function getAllCommentsByPostId(postId) {
             comments.comment_post_id,
             posts.post_id,
             comments.comment,
+            comments.comment_likes_from_user_ids,
             comments.comment_owner_id,
             users.user_id,
             users.username,
@@ -113,6 +116,7 @@ function getAllCommentsByUserId(userId) {
             comments.comment_post_id,
             posts.post_id,
             comments.comment,
+            comments.comment_likes_from_user_ids,
             comments.comment_owner_id,
             users.user_id,
             users.username,
@@ -140,12 +144,19 @@ function getAllCommentsByUserId(userId) {
 function createSingleComment(comment) {
     const queryString = `
         INSERT INTO comments
-            (comment_date, comment_updated, comment, comment_post_id, comment_owner_id)
+            (comment_date, comment_updated, comment, comment_likes_from_user_ids, comment_post_id, comment_owner_id)
         VALUES
             ($1, $2, $3, $4, $5)
         RETURNING *;
     `
-    const queryValues = [comment.comment_date, comment.comment_updated, comment.comment, comment.comment_post_id, comment.comment_owner_id];
+    const queryValues = [
+        comment.comment_date,
+        comment.comment_updated,
+        comment.comment,
+        JSON.stringify(comment.comment_likes_from_user_ids),
+        comment.comment_post_id,
+        comment.comment_owner_id
+    ];
 
     return database
         .query(queryString, queryValues)
@@ -163,11 +174,17 @@ function updateSingleCommentById(commentId, comment) {
         UPDATE comments
         SET
             comment_updated = $1,
-            comment = $2
-        WHERE comment_id = $3
+            comment = $2,
+            comment_likes_from_user_ids = $3
+        WHERE comment_id = $4
         RETURNING *;
     `
-    const queryValues = [comment.comment_updated, comment.comment, commentId];
+    const queryValues = [
+        comment.comment_updated,
+        comment.comment,
+        JSON.stringify(comment.comment_likes_from_user_ids),
+        commentId
+    ];
 
     return database
         .query(queryString, queryValues)

@@ -9,22 +9,22 @@ const posts = [
             [
                 "salt and vinegar",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [2, 8]}
+                {votesFromUserIds: [2, 8]}
             ],
             [
                 "cheese and onion",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: [6]}
+                {votesFromUserIds: [6]}
             ],
             [
                 "ready salted",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [3, 7, 9, 10]}
+                {votesFromUserIds: [3, 7, 9, 10]}
             ],
             [
                 "prawn cocktail",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: [4, 5]}
+                {votesFromUserIds: [4, 5]}
             ]
         ],
         postOwnerId: 1
@@ -39,22 +39,22 @@ const posts = [
             [
                 "beige",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [1, 3, 4, 7]}
+                {votesFromUserIds: [1, 3, 4, 7]}
             ],
             [
                 "black",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: []}
+                {votesFromUserIds: []}
             ],
             [
                 "pink",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [5, 8, 9, 10]}
+                {votesFromUserIds: [5, 8, 9, 10]}
             ],
             [
                 "orange",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: [6]}
+                {votesFromUserIds: [6]}
             ]
         ],
         postOwnerId: 2
@@ -69,12 +69,12 @@ const posts = [
             [
                 "Gooogle Pixel 10 Pro",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [1, 2, 5, 9, 10]}
+                {votesFromUserIds: [1, 2, 5, 9, 10]}
             ],
             [
                 "Apple iPhone 30",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: [4, 6, 7, 8]}
+                {votesFromUserIds: [4, 6, 7, 8]}
             ]
         ],
         postOwnerId: 3
@@ -89,22 +89,22 @@ const posts = [
             [
                 "Uniqlo",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [5, 6, 7, 8]}
+                {votesFromUserIds: [5, 6, 7, 8]}
             ],
             [
                 "Sports Direct",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: [3]}
+                {votesFromUserIds: [3]}
             ],
             [
                 "The North Face",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [1, 9, 10]}
+                {votesFromUserIds: [1, 9, 10]}
             ],
             [
                 "Mountain Warehouse",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: [2]}
+                {votesFromUserIds: [2]}
             ]
         ],
         postOwnerId: 4
@@ -119,22 +119,22 @@ const posts = [
             [
                 "Scotland",
                 "",
-                {votersUserIds: [3]}
+                {votesFromUserIds: [3]}
             ],
             [
                 "France",
                 "",
-                {votersUserIds: [7, 8]}
+                {votesFromUserIds: [7, 8]}
             ],
             [
                 "Spain",
                 "",
-                {votersUserIds: [2, 4, 9]}
+                {votesFromUserIds: [2, 4, 9]}
             ],
             [
                 "Italy",
                 "",
-                {votersUserIds: [1, 6, 10]}
+                {votesFromUserIds: [1, 6, 10]}
             ]
         ],
         postOwnerId: 5
@@ -149,27 +149,27 @@ const posts = [
             [
                 "1",
                 "",
-                {votersUserIds: [2, 3, 7, 10]}
+                {votesFromUserIds: [2, 3, 7, 10]}
             ],
             [
                 "2",
                 "",
-                {votersUserIds: [1, 4, 9]}
+                {votesFromUserIds: [1, 4, 9]}
             ],
             [
                 "3",
                 "",
-                {votersUserIds: [5]}
+                {votesFromUserIds: [5]}
             ],
             [
                 "4",
                 "",
-                {votersUserIds: []}
+                {votesFromUserIds: []}
             ],
             [
                 "10",
                 "",
-                {votersUserIds: [8]}
+                {votesFromUserIds: [8]}
             ]
         ],
         postOwnerId: 6
@@ -183,17 +183,17 @@ const posts = [
             [
                 "Bose QuietComfort 45",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [1, 2, 3, 4, 8, 10]}
+                {votesFromUserIds: [1, 2, 3, 4, 8, 10]}
             ],
             [
                 "Sony WH-1000XM4",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: [9]}
+                {votesFromUserIds: [9]}
             ],
             [
                 "Sennheiser Momentum 4 Wireless",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [5, 6]}
+                {votesFromUserIds: [5, 6]}
             ]
         ],
         postOwnerId: 7
@@ -208,17 +208,17 @@ const posts = [
             [
                 "Ford Fiesta",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: []}
+                {votesFromUserIds: []}
             ],
             [
                 "Tesla Model 3",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: [1, 2, 3, 4, 5, 6, 9, 10]}
+                {votesFromUserIds: [1, 2, 3, 4, 5, 6, 9, 10]}
             ],
             [
                 "BMW 3 Series",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [7]}
+                {votesFromUserIds: [7]}
             ]
         ],
         postOwnerId: 8
@@ -233,22 +233,22 @@ const posts = [
             [
                 "Monzo",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [1, 2, 3, 4, 6]}
+                {votesFromUserIds: [1, 2, 3, 4, 6]}
             ],
             [
                 "Starling",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: [5, 7, 10]}
+                {votesFromUserIds: [5, 7, 10]}
             ],
             [
                 "Halifax",
                 "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
-                {votersUserIds: [8]}
+                {votesFromUserIds: [8]}
             ],
             [
                 "Barclays",
                 "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
-                {votersUserIds: []}
+                {votesFromUserIds: []}
             ]
         ],
         postOwnerId: 9
@@ -263,17 +263,17 @@ const posts = [
             [
                 "McDonalds",
                 "",
-                {votersUserIds: [2, 3, 4, 5, 6]}
+                {votesFromUserIds: [2, 3, 4, 5, 6]}
             ],
             [
                 "Burger King",
                 "",
-                {votersUserIds: [1, 8]}
+                {votesFromUserIds: [1, 8]}
             ],
             [
                 "KFC",
                 "",
-                {votersUserIds: [7, 9]}
+                {votesFromUserIds: [7, 9]}
             ]
         ],
         postOwnerId: 10
