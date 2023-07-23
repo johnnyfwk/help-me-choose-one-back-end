@@ -1,5 +1,5 @@
 You are now connected to database "help_me_choose_one" as user "johnny".
- user_id | username  | password |       avatar        |        join_date         
+ user_id | username  | password |     avatar_url      |        join_date         
 ---------+-----------+----------+---------------------+--------------------------
       10 | ian       | password | default-avatar.webp | 2023-07-21T09:59:42.783Z
        9 | HeleN     | password | default-avatar.webp | 2023-07-21T08:59:42.783Z

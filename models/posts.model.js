@@ -13,7 +13,7 @@ function getAllPosts() {
             posts.post_owner_id,
             users.user_id,
             users.username,
-            users.avatar
+            users.avatar_url
         FROM posts
         JOIN users
             ON posts.post_owner_id = users.user_id
@@ -44,7 +44,7 @@ function getSinglePostById(postId) {
             posts.post_owner_id,
             users.user_id,
             users.username,
-            users.avatar
+            users.avatar_url
         FROM posts
         JOIN users
             ON posts.post_owner_id = users.user_id
@@ -79,7 +79,7 @@ function getAllPostsByUserId(userId) {
             posts.options_and_votes,
             posts.post_owner_id,
             users.username,
-            users.avatar
+            users.avatar_url
         FROM posts
         JOIN users
         ON posts.post_owner_id = users.user_id

@@ -13,7 +13,7 @@ function getAllComments() {
             comments.comment_owner_id,
             users.user_id,
             users.username,
-            users.avatar
+            users.avatar_url
         FROM comments
         JOIN posts
             ON comments.comment_post_id = posts.post_id
@@ -45,7 +45,7 @@ function getSingleCommentById(commentId) {
             comments.comment_owner_id,
             users.user_id,
             users.username,
-            users.avatar
+            users.avatar_url
         FROM comments
         JOIN posts
             ON comments.comment_post_id = posts.post_id
@@ -82,7 +82,7 @@ function getAllCommentsByPostId(postId) {
             comments.comment_owner_id,
             users.user_id,
             users.username,
-            users.avatar
+            users.avatar_url
         FROM comments
         JOIN posts
             ON comments.comment_post_id = posts.post_id
@@ -120,7 +120,7 @@ function getAllCommentsByUserId(userId) {
             comments.comment_owner_id,
             users.user_id,
             users.username,
-            users.avatar
+            users.avatar_url
         FROM comments
         JOIN posts
             ON comments.comment_post_id = posts.post_id

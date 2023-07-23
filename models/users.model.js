@@ -39,13 +39,13 @@ function getSingleUserById(userId) {
 function addSingleUser(user) {
     const queryString = `
         INSERT INTO users
-            (username, password, avatar, join_date)
+            (username, password, avatar_url, join_date)
         VALUES
             ($1, $2, $3, $4)
         RETURNING *;
     `
 
-    const queryValues = [user.username, user.password, user.avatar, user.join_date];
+    const queryValues = [user.username, user.password, user.avatar_url, user.join_date];
 
     return database
         .query(queryString, queryValues)
@@ -54,7 +54,7 @@ function addSingleUser(user) {
         })
 }
 
-function updateSingleUserById(userId, userInfo) {
+function updateSingleUserById(userId, user) {
     if (isNaN(userId)) {
         return Promise.reject({status: 400, msg: "Please enter a valid user ID."});
     }
@@ -63,11 +63,11 @@ function updateSingleUserById(userId, userInfo) {
         UPDATE users
         SET
             password = $1,
-            avatar = $2
+            avatar_url = $2
         WHERE user_id = $3
         RETURNING *;
     `
-    const queryValues = [userInfo.password, userInfo.avatar, userId];
+    const queryValues = [user.password, user.avatar_url, userId];
 
     return database
         .query(queryString, queryValues)
@@ -94,6 +94,9 @@ function deleteSingleUserById(userId) {
     return database
         .query(queryString, queryValue)
         .then((response) => {
+            if (response.rowCount === 0) {
+                return Promise.reject({status: 404, msg: "User does not exist."});
+            }
             return response.rows[0];
         })
 }
