@@ -1,5 +1,6 @@
 const {
     getAllPosts,
+    getAllPostsByCategory,
     getSinglePostById,
     getAllPostsByUserId,
     createSinglePost,
@@ -12,6 +13,16 @@ function getPosts(request, response, next) {
     getAllPosts()
         .then((posts) => {
             response.status(200).send({posts});
+        })
+        .catch((error) => {
+            next(error);
+        })
+}
+
+function getPostsByCategory(request, response, next) {
+    getAllPostsByCategory(request.params.category)
+        .then((posts) => {
+            response.status(200).send({posts})
         })
         .catch((error) => {
             next(error);
@@ -80,6 +91,7 @@ function deletePostsByUserId(request, response, next) {
 
 module.exports = {
     getPosts,
+    getPostsByCategory,
     getPostById,
     getPostsByUserId,
     createPost,

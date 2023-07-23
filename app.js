@@ -12,6 +12,7 @@ const {
 
 const {
     getPosts,
+    getPostsByCategory,
     getPostById,
     getPostsByUserId,
     createPost,
@@ -49,6 +50,7 @@ app.patch("/api/users/:user_id", updateUserById);
 app.delete("/api/users/:user_id", deleteUserById);
 
 app.get("/api/posts", getPosts);
+app.get("/api/posts/:category", getPostsByCategory);
 app.get("/api/posts/:post_id", getPostById);
 app.get("/api/users/:user_id/posts", getPostsByUserId);
 app.post("/api/posts", createPost);

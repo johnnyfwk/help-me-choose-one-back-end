@@ -4,7 +4,7 @@ const posts = [
         postUpdated: "2023-07-21T01:59:42.783Z",
         title: "Which crisp flavour should I have right now?",
         description: "I have the choice between salt and vinegar, cheese and onion, ready salted, or prawn cocktail.",
-        category: "Food & Drink",
+        category: "food-and-drink",
         optionsAndVotes: [
             {
                 option: "salt and vinegar",
@@ -34,7 +34,7 @@ const posts = [
         postUpdated: "2023-07-21T02:59:42.783Z",
         title: "What colour should I paint my bedroom?",
         description: "Going to repaint my bedroom this weekend. What colour should I paint it?",
-        category: "Home & Garden",
+        category: "home-and-garden",
         optionsAndVotes: [
             {
                 option: "beige",
@@ -64,7 +64,7 @@ const posts = [
         postUpdated: "2023-07-21T03:59:42.783Z",
         title: "Which mobile phone should I buy?",
         description: "I can't choose between the Google Pixel 10 Pro or Apple iPhone 30.",
-        category: "Electronics",
+        category: "electronics",
         optionsAndVotes: [
             {
                 option: "Gooogle Pixel 10 Pro",
@@ -84,7 +84,7 @@ const posts = [
         postUpdated: "2023-07-21T04:59:42.783Z",
         title: "Where is the best place to buy a waterproof jacket?",
         description: "I have £150 to spend on a lightweight and waterproof jacket. Where is the best place to buy one?",
-        category: "Fashion & Accessories",
+        category: "fashion-and-accessories",
         optionsAndVotes: [
             {
                 option: "Uniqlo",
@@ -114,7 +114,7 @@ const posts = [
         postUpdated: "2023-07-21T05:59:42.783Z",
         title: "Where should I go on holiday this summer?",
         description: "I have 2 weeks off work this summer and can't decide where to go. Where should I go?",
-        category: "Travel",
+        category: "travel",
         optionsAndVotes: [
             {
                 option: "Scotland",
@@ -144,7 +144,7 @@ const posts = [
         postUpdated: "2023-07-21T06:59:42.783Z",
         title: "How many kids should I have?",
         description: "My husband and I want to have children but don't know how many we should we have. What do you guys think?",
-        category: "Love & Relationship",
+        category: "love-and-relationships",
         optionsAndVotes: [
             {
                 option: "1",
@@ -178,7 +178,7 @@ const posts = [
         postUpdated: "2023-07-21T07:59:42.783Z",
         title: "What headphones should I buy?",
         description: "I just broke my headphones and need a new pair. Which one should I buy?",
-        category: "Electronics",
+        category: "electronics",
         optionsAndVotes: [
             {
                 option: "Bose QuietComfort 45",
@@ -203,7 +203,7 @@ const posts = [
         postUpdated: "2023-07-21T08:59:42.783Z",
         title: "What car should I buy?",
         description: "I am super rich and feel like splashing some cash on a car tomorrow. Which one should I buy?",
-        category: "Vehicles",
+        category: "vehicles",
         optionsAndVotes: [
             {
                 option: "Ford Fiesta",
@@ -228,7 +228,7 @@ const posts = [
         postUpdated: "2023-07-21T09:59:42.783Z",
         title: "Which bank should I open a bank account with?",
         description: "I need a bank account but don't know which bank to open one with? Can I get some suggestions please? Thanks",
-        category: "Financial Services",
+        category: "financial-services",
         optionsAndVotes: [
             {
                 option: "Monzo",
@@ -258,7 +258,7 @@ const posts = [
         postUpdated: "2023-07-21T10:59:42.783Z",
         title: "What should I have for my dinner tonight?",
         description: "Can't choose between Mcdonald's, Burger King, and KFC.",
-        category: "Food & Drink",
+        category: "food-and-drink",
         optionsAndVotes: [
             {
                 option: "McDonalds",

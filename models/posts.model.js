@@ -27,6 +27,35 @@ function getAllPosts() {
         })
 }
 
+function getAllPostsByCategory(category) {
+    const queryString = `
+        SELECT
+            posts.post_id,
+            posts.post_date,
+            posts.post_updated,
+            posts.title,
+            posts.description,
+            posts.category,
+            posts.options_and_votes,
+            posts.post_owner_id,
+            users.user_id,
+            users.username,
+            users.avatar_url
+        FROM posts
+        JOIN users
+            ON posts.post_owner_id = users.user_id
+        WHERE category = $1
+        ORDER by post_updated DESC;
+    `
+    const queryValue = [category];
+
+    return database
+        .query(queryString, queryValue)
+        .then((response) => {
+            return response.rows;
+        })
+}
+
 function getSinglePostById(postId) {
     if (isNaN(postId)) {
         return Promise.reject({status: 400, msg: "Please enter a valid post ID."});
@@ -205,6 +234,7 @@ function deleteAllPostsByUserId(userId) {
 
 module.exports = {
     getAllPosts,
+    getAllPostsByCategory,
     getSinglePostById,
     getAllPostsByUserId,
     createSinglePost,
