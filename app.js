@@ -50,8 +50,8 @@ app.patch("/api/users/:user_id", updateUserById);
 app.delete("/api/users/:user_id", deleteUserById);
 
 app.get("/api/posts", getPosts);
-app.get("/api/posts/:category", getPostsByCategory);
 app.get("/api/posts/:post_id", getPostById);
+app.get("/api/posts/category/:category_name", getPostsByCategory);
 app.get("/api/users/:user_id/posts", getPostsByUserId);
 app.post("/api/posts", createPost);
 app.patch("/api/posts/:post_id", updatePostById);

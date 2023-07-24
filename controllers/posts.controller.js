@@ -19,20 +19,20 @@ function getPosts(request, response, next) {
         })
 }
 
-function getPostsByCategory(request, response, next) {
-    getAllPostsByCategory(request.params.category)
-        .then((posts) => {
-            response.status(200).send({posts})
+function getPostById(request, response, next) {
+    getSinglePostById(request.params.post_id)
+        .then((post) => {
+            response.status(200).send({post});
         })
         .catch((error) => {
             next(error);
         })
 }
 
-function getPostById(request, response, next) {
-    getSinglePostById(request.params.post_id)
-        .then((post) => {
-            response.status(200).send({post});
+function getPostsByCategory(request, response, next) {
+    getAllPostsByCategory(request.params.category_name)
+        .then((posts) => {
+            response.status(200).send({posts})
         })
         .catch((error) => {
             next(error);
