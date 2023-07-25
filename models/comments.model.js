@@ -96,9 +96,6 @@ function getAllCommentsByPostId(postId) {
     return database
         .query(queryString, queryValue)
         .then((response) => {
-            if (response.rowCount === 0) {
-                return Promise.reject({status: 404, msg: "This post does not exist or does not have any comments."});
-            }
             return response.rows;
         })
 }
@@ -134,9 +131,6 @@ function getAllCommentsByUserId(userId) {
     return database
         .query(queryString, queryValue)
         .then((response) => {
-            if (response.rowCount === 0) {
-                return Promise.reject({status: 404, msg: "This user does not exist or has not made any comments."});
-            }
             return response.rows;
         })
 }
