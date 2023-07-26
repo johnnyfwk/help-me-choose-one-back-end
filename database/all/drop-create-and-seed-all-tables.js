@@ -59,7 +59,7 @@ function createTableComments() {
             comment_id SERIAL PRIMARY KEY,
             comment_date VARCHAR(50),
             comment_updated VARCHAR(50),
-            comment VARCHAR(300),
+            comment TEXT,
             comment_likes_from_user_ids JSONB,
             comment_post_id INT,
             comment_owner_id INT,
