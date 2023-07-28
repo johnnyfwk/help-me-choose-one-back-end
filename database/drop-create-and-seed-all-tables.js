@@ -25,8 +25,8 @@ function createTableUsers() {
     const queryString = `
         CREATE TABLE IF NOT EXISTS users (
             user_id SERIAL PRIMARY KEY,
-            username TEXT,
-            password TEXT,
+            username TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL,
             avatar_url TEXT,
             join_date VARCHAR(50)
         );

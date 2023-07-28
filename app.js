@@ -35,6 +35,7 @@ const {
 
 const {
     handle404Errors,
+    handleUsernameAlreadyRegistered,
     handleCustomErrors,
     handle500Errors
 } = require("./controllers/errors.controller");
@@ -70,6 +71,7 @@ app.delete("/api/users/:user_id/comments", deleteCommentsByUserId);
 
 app.all("*", handle404Errors);
 
+app.use(handleUsernameAlreadyRegistered);
 app.use(handleCustomErrors);
 app.use(handle500Errors);
 
