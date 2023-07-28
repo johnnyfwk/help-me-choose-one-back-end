@@ -217,7 +217,7 @@ const posts = [
             },
             {
                 option: "BMW 3 Series",
-                optionImage: "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
+                optionImage: "",
                 votesFromUserIds: [7]
             }
         ],
@@ -232,22 +232,22 @@ const posts = [
         optionsAndVotes: [
             {
                 option: "Monzo",
-                optionImage: "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
+                optionImage: "",
                 votesFromUserIds: [1, 2, 3, 4, 6]
             },
             {
                 option: "Starling",
-                optionImage: "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
+                optionImage: "",
                 votesFromUserIds: [5, 7, 10]
             },
             {
                 option: "Halifax",
-                optionImage: "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
+                optionImage: "",
                 votesFromUserIds: [8]
             },
             {
                 option: "Barclays",
-                optionImage: "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
+                optionImage: "",
                 votesFromUserIds: []
             }
         ],
@@ -262,17 +262,17 @@ const posts = [
         optionsAndVotes: [
             {
                 option: "McDonalds",
-                optionImage: "",
+                optionImage: "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
                 votesFromUserIds: [2, 3, 4, 5, 6]
             },
             {
                 option: "Burger King",
-                optionImage: "",
+                optionImage: "https://ichef.bbci.co.uk/news/1536/cpsprodpb/F132/production/_120364716_13efa5e0-90a6-4f69-a7fb-7df6d3e027ca.jpg",
                 votesFromUserIds: [1, 8]
             },
             {
                 option: "KFC",
-                optionImage: "",
+                optionImage: "https://www.rd.com/wp-content/uploads/2019/09/GettyImages-621924830-scaled.jpg",
                 votesFromUserIds: [7, 9]
             }
         ],
