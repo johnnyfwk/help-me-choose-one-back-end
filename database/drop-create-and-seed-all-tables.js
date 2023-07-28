@@ -1,5 +1,5 @@
-const database = require("../connection");
-const { users, posts, comments } = require("../data/index");
+const database = require("./connection");
+const { users, posts, comments } = require("./data/index");
 const format = require("pg-format");
 
 // Drop all tables

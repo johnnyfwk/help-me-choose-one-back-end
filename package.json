@@ -16,19 +16,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon listen.js",
-    "dev-create-database": "psql -f ./database/create/create-database.sql",
-    "dev-drop-database": "psql -f ./database/drop/drop-database.sql",
-    "dev-drop-table-users": "node ./database/drop/tables/drop-table-users.js",
-    "dev-create-table-users": "node ./database/create/tables/create-table-users.js",
-    "dev-seed-table-users": "node ./database/seed/seed-table-users.js",
-    "dev-drop-table-posts": "node ./database/drop/tables/drop-table-posts.js",
-    "dev-create-table-posts": "node ./database/create/tables/create-table-posts.js",
-    "dev-seed-table-posts": "node ./database/seed/seed-table-posts.js",
-    "dev-drop-table-comments": "node ./database/drop/tables/drop-table-comments.js",
-    "dev-create-table-comments": "node ./database/create/tables/create-table-comments.js",
-    "dev-seed-table-comments": "node ./database/seed/seed-table-comments.js",
-    "dev-drop-create-and-seed-all-tables": "node ./database/all/drop-create-and-seed-all-tables.js",
-    "dev-check-all-tables": "psql -f ./database/check/check-all-tables.sql > ./database/check/all-tables.txt"
+    "dev-create-database": "psql -f ./database/create-database.sql",
+    "dev-drop-database": "psql -f ./database/drop-database.sql",
+    "dev-drop-create-and-seed-all-tables": "node ./database/drop-create-and-seed-all-tables.js",
+    "dev-check-all-tables": "psql -f ./database/check-all-tables.sql > ./database/all-tables.txt"
   },
   "repository": {
     "type": "git",
