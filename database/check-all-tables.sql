@@ -11,3 +11,7 @@ ORDER BY post_updated DESC;
 SELECT *
 FROM comments
 ORDER BY comment_id DESC;
+
+SELECT *
+FROM reports
+ORDER BY report_id DESC;
