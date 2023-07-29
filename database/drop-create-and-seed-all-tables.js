@@ -1,8 +1,13 @@
 const database = require("./connection");
-const { users, posts, comments } = require("./data/index");
+const { users, posts, comments, reports } = require("./data/index");
 const format = require("pg-format");
 
 // Drop all tables
+function dropTableReports() {
+    return database
+        .query("DROP TABLE IF EXISTS reports;")
+}
+
 function dropTableComments() {
     return database
         .query("DROP TABLE IF EXISTS comments;")
@@ -70,6 +75,27 @@ function createTableComments() {
     return database
         .query(queryString)
 }
+
+function createTableReports() {
+    const queryString = `
+        CREATE TABLE IF NOT EXISTS reports (
+            report_id SERIAL PRIMARY KEY,
+            report_date VARCHAR(50),
+            report_owners_id INT,
+            report_owners_name TEXT,
+            report_post_id INT,
+            report_post_owners_id INT,
+            report_post_owners_name TEXT,
+            report_comment_id INT,
+            report_comment_owners_id INT,
+            report_comment_owners_name TEXT,
+            report_title TEXT,
+            report_description TEXT
+        );
+    `
+    return database
+        .query(queryString)
+}
 // Create all tables
 
 
@@ -119,7 +145,14 @@ function seedTablePosts(posts) {
 
 function seedTableComments(comments) {
     const queryValues = comments.map((comment) => {
-        const commentArray = [comment.commentDate, comment.commentUpdated, comment.comment, JSON.stringify(comment.commentLikesFromUserIds), comment.commentPostId, comment.commentOwnerId];
+        const commentArray = [
+            comment.commentDate,
+            comment.commentUpdated,
+            comment.comment,
+            JSON.stringify(comment.commentLikesFromUserIds),
+            comment.commentPostId,
+            comment.commentOwnerId
+        ];
         return commentArray;
     })
 
@@ -134,11 +167,44 @@ function seedTableComments(comments) {
     return database
         .query(queryStringAndValues)
 }
+
+function seedTableReports(reports) {
+    const queryValues = reports.map((report) => {
+        const reportArray = [
+            report.reportDate,
+            report.reportOwnersId,
+            report.reportOwnersName,
+            report.reportPostId,
+            report.reportPostOwnersId,
+            report.reportPostOwnersName,
+            report.reportCommentId,
+            report.reportCommentOwnersId,
+            report.reportCommentOwnersName,
+            report.reportTitle,
+            report.reportDescription
+        ];
+        return reportArray;
+    })
+
+    const queryStringAndValues = format(`
+        INSERT INTO reports
+            (report_date, report_owners_id, report_owners_name, report_post_id, report_post_owners_id, report_post_owners_name, report_comment_id, report_comment_owners_id, report_comment_owners_name, report_title, report_description)
+        VALUES
+            %L
+        RETURNING *;
+    `, queryValues)
+
+    return database
+        .query(queryStringAndValues)
+}
 // Seed all tables
 
 
 function dropCreateAndSeedAllTables() {
-    return dropTableComments() 
+    return dropTableReports() 
+        .then(() => {
+            return dropTableComments();
+        })
         .then(() => {
             return dropTablePosts();
         })
@@ -155,6 +221,9 @@ function dropCreateAndSeedAllTables() {
             return createTableComments();
         })
         .then(() => {
+            return createTableReports();
+        })
+        .then(() => {
             return seedTableUsers(users);
         })
         .then(() => {
@@ -162,6 +231,9 @@ function dropCreateAndSeedAllTables() {
         })
         .then(() => {
             return seedTableComments(comments);
+        })
+        .then(() => {
+            return seedTableReports(reports);
         })
         .then(() => {
             database.end();

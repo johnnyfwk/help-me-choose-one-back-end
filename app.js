@@ -34,6 +34,12 @@ const {
 } = require("./controllers/comments.controller");
 
 const {
+    getReports,
+    getReportById,
+    createReport
+} = require("./controllers/reports.controller");
+
+const {
     handle404Errors,
     handleUsernameAlreadyRegistered,
     handleCustomErrors,
@@ -68,6 +74,10 @@ app.patch("/api/comments/:comment_id", updateCommentById);
 app.delete("/api/comments/:comment_id", deleteCommentById);
 app.delete("/api/posts/:post_id/comments", deleteCommentsByPostId);
 app.delete("/api/users/:user_id/comments", deleteCommentsByUserId);
+
+app.get("/api/reports", getReports);
+app.get("/api/reports/:report_id", getReportById);
+app.post("/api/reports", createReport);
 
 app.all("*", handle404Errors);
 
