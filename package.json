@@ -12,14 +12,17 @@
   "name": "back-end",
   "description": "",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "listen.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon listen.js",
     "dev-create-database": "psql -f ./database/create-database.sql",
     "dev-drop-database": "psql -f ./database/drop-database.sql",
     "dev-drop-create-and-seed-all-tables": "node ./database/drop-create-and-seed-all-tables.js",
-    "dev-check-all-tables": "psql -f ./database/check-all-tables.sql > ./database/all-tables.txt"
+    "dev-check-all-tables": "psql -f ./database/check-all-tables.sql > ./database/all-tables.txt",
+    "start": "node listen.js",
+    "prod-drop-and-create-all-tables": "NODE_ENV=production npm run dev-drop-create-and-seed-all-tables",
+    "prod-check-all-tables": "NODE_ENV=production npm run dev-check-all-tables"
   },
   "repository": {
     "type": "git",
