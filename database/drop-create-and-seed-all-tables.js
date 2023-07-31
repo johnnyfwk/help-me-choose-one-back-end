@@ -223,18 +223,18 @@ function dropCreateAndSeedAllTables() {
         .then(() => {
             return createTableReports();
         })
-        // .then(() => {
-        //     return seedTableUsers(users);
-        // })
-        // .then(() => {
-        //     return seedTablePosts(posts);
-        // })
-        // .then(() => {
-        //     return seedTableComments(comments);
-        // })
-        // .then(() => {
-        //     return seedTableReports(reports);
-        // })
+        .then(() => {
+            return seedTableUsers(users);
+        })
+        .then(() => {
+            return seedTablePosts(posts);
+        })
+        .then(() => {
+            return seedTableComments(comments);
+        })
+        .then(() => {
+            return seedTableReports(reports);
+        })
         .then(() => {
             database.end();
         })
