@@ -1,25 +1,43 @@
-# help-me-choose-one-back-end
+# HelpMeChooseOne.com - Backend
 
-Clone the repository:
-- "git clone https://github.com/johnnyfwk/help-me-choose-one-back-end.git"
+HelpMeChooseOne.co.uk is a full-stack app where users can help each other make choices through a voting system.
 
-Go into the folder:
-- "cd help-me-choose-one-back-end"
+The app was built using PostgreSQL, Express, React, and Node.js.
 
-Install all dependencies required to run the app:
-- "npm install"
+Live URL: https://helpmechooseone.com/
 
-Create .env.development file and type the following in the file to connect to the local database:
-- "PGDATABASE=help_me_choose_one"
+The back end (Github: https://github.com/johnnyfwk/help-me-choose-one-back-end) is an Express API that supplies the front end (Github: https://github.com/johnnyfwk/help-me-choose-one-front-end) with users, posts, comments, and reports stored in PostgreSQL hosted by Render.com.
 
-Create a database called help_me_choose_one by typing in the terminal:
-- "npm run dev-create-database"
+To clone this repo:
+- go to https://github.com/johnnyfwk/help-me-choose-one-back-end;
+- near the top of the page, click on the 'Code' button;
+- in the 'Local' tab, copy the HTTPS URL (https://github.com/johnnyfwk/help-me-choose-one-back-end.git);
+- in Terminal, access the folder you want to hold the repo;
+- type 'git clone https://github.com/johnnyfwk/help-me-choose-one-back-end.git' in the terminal (a repo named 'help-me-choose-one-back-end' will be created in the current folder);
+- in Terminal, type 'cd help-me-choose-one-back-end' to go into that folder.
+- This project uses packages that need to be installed in order for it to be run. To do this:
 
-Drop, create, and seed all tables by typing the following in the terminal:
-- "npm run dev-drop-create-and-seed-all-tables"
+In Terminal, ensure you are in the 'help-me-choose-one-back-end' folder;
+- type 'npm install'.
 
-Check tables have been created and seeded by typing the following:
-- "npm run dev-check-all-tables"
+To connect to the development database and run the project, a development environment variable must be created:
+- at repo root level, create a .env file named '.env.development';
+- In this file, type in 'PGDATABASE=help_me_choose_one'.
 
-If the all the above is done successfully, you should see all the tables and their contents in the file:
-- database/check/all-tables.txt
+If the database already exists and you want to drop it:
+- in Terminal, type 'npm run dev-drop-database';
+
+To create the database:
+- in Terminal, type 'npm run dev-create-database'.
+
+To create and seed all tables:
+- in Terminal, type 'npm run dev-drop-create-and-seed-all-tables'.
+
+To run the project:
+- in Terminal, type 'npm run dev' to start listening to API requests.
+
+View the JSON data at the various endpoints:
+- Users - http://localhost:9090/bE2uT8XzAqG1yJ6fNvL3/users
+- Posts - http://localhost:9090/bE2uT8XzAqG1yJ6fNvL3/posts
+- Comments - http://localhost:9090/bE2uT8XzAqG1yJ6fNvL3/comments
+- Reports - http://localhost:9090/bE2uT8XzAqG1yJ6fNvL3/reports
